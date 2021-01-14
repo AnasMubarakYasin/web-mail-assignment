@@ -1,0 +1,26 @@
+@import '../fonts/iconfont/material-icons.css';
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.box {
+    flex: 1 0 auto;
+    margin: 8px;
+    padding: 8px;
+    display: grid;
+    place-items: center;
+    row-gap: 8px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.md-icons {
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+}

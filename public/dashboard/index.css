@@ -1,0 +1,251 @@
+@import '../fonts/iconfont/material-icons.css';
+
+:root {
+    --primary-color: #4BB7FF;
+    --secondary-color: #141A23;
+    --background-color: white;
+    --surface-color: white;
+    --on-primary-color: white;
+    --on-secondary-color: white;
+    --on-background-color: black;
+    --on-surface-color: black;
+    --min-size-clickable: 44px;
+    --def-round: 6px;
+    --def-shadow-color: rgb(160, 160, 160);
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--on-background-color);
+}
+
+h1, h2, p {
+    margin: 0;
+    font-weight: 500;
+}
+
+nav {
+    display: flex;
+    padding: 8px 32px;
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+}
+
+nav .title {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: -webkit-max-content;
+    grid-template-columns: max-content;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+}
+
+nav .vertical-space {
+    flex: 1 0 auto;
+}
+
+nav .system {
+    display: grid;
+    margin: auto 0;
+    grid-auto-flow: column;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    place-items: center;
+    justify-content: end;
+}
+
+nav .system :-webkit-any(.account, .notification, .logout) {
+    display: grid;
+    place-items: center;
+}
+
+nav .system :-webkit-any(.account, .notification, .logout) .md-icons {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+    color: var(--on-primary-color);
+}
+
+nav .system .account {
+    grid-auto-flow: column;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+}
+
+nav .system .account .md-icons {
+    background-color: var(--on-primary-color);
+    color: lightslategray;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+nav .system .account .name {
+    font-weight: 600;
+}
+
+nav h1 {
+    font-size: 24px;
+}
+
+nav h2 {
+    font-size: 12px;
+}
+
+nav img {
+    aspect-ratio: attr(width) / attr(height);
+    border-radius: var(--def-round);
+}
+
+main {
+    flex: 1 0 auto;
+    /* display: grid; */
+    padding: 32px 139px;
+    /* place-items: center; */
+}
+
+main .title-board {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+main .title-board h1 {
+    font-size: 24px;
+    opacity: .8;
+}
+
+main .title-board h2 {
+    font-size: 20px;
+    opacity: .8;
+}
+
+main .title-board .hr {
+    opacity: .8;
+    border-left: 2px solid var(--on-background-color);
+    height: 24px;
+    margin: 0 8px;
+}
+
+main .list-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+main .list-card .card {
+    position: relative;
+    display: grid;
+    width: 260px;
+    margin: 8px;
+    padding: 16px;
+    grid-template-areas: "img title"
+                         "img subtitle";
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    box-shadow: 0 0 6px var(--def-shadow-color);
+    border-radius: var(--def-round);
+    place-items: center;
+    justify-items: start;
+    grid-template-columns: 56px auto;
+    text-decoration: none;
+    color: var(--on-surface-color);
+}
+
+main .list-card .card:hover {
+    background-color: rgba(0, 0, 0, 0.035);
+}
+
+main .list-card img {
+    grid-area: img;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+main .list-card h1 {
+    grid-area: title;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+main .list-card h2 {
+    grid-area: subtitle;
+    font-size: 14px;
+}
+
+main .list-card :-webkit-any(h1, h2) {
+    opacity: .8;
+}
+
+main .list-card span {
+    position: absolute;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    width: 18px;
+    height: 18px;
+    line-height: 1.6;
+    color: white;
+    top: 16px;
+    right: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: red;
+    border-radius: 50%;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 56px;
+    background-color: var(--secondary-color);
+    color: var(--on-secondary-color);
+}
+
+footer p {
+    display: grid;
+    place-items: center;
+    font-weight: 400;
+}
+
+footer a {
+    color: inherit;
+}
+
+footer .attributes {
+    display: flex;
+    place-items: center;
+    place-content: center;
+}
+
+@media only screen and (max-width: 601px) {
+    main {
+        margin: auto;
+        padding: 32px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    main .list-card {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1401px) {
+
+}
